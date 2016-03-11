@@ -11,4 +11,6 @@
 
 @interface TransitioningDelegate : NSObject <UINavigationControllerDelegate>
 
+@property (strong, nonatomic) UIPercentDrivenInteractiveTransition *transition;
+
 @end

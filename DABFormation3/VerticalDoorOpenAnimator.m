@@ -48,16 +48,22 @@
         [container addSubview:snapshotTop];
         [container addSubview:snapshotBottom];
         
+        
+        // tried to use beizer curve
         // [CAMediaTimingFunction functionWithControlPoints:.92 :1.78 :.98 :.5]
-        [UIView animateWithDuration:self.duration delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        
+        //[UIView animateWithDuration:self.duration delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        [UIView animateKeyframesWithDuration:self.duration delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
             
-            //set the frames to animate them back into place
-            CGRect offsetTopFrame = topFrame;
-            CGRect offsetBottomFrame = bottomFrame;
-            offsetTopFrame.origin.y -= topFrame.size.height;
-            offsetBottomFrame.origin.y += bottomFrame.size.height;
-            snapshotTop.frame = offsetTopFrame;
-            snapshotBottom.frame = offsetBottomFrame;
+            [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:self.duration animations:^{
+                //set the frames to animate them back into place
+                CGRect offsetTopFrame = topFrame;
+                CGRect offsetBottomFrame = bottomFrame;
+                offsetTopFrame.origin.y -= topFrame.size.height;
+                offsetBottomFrame.origin.y += bottomFrame.size.height;
+                snapshotTop.frame = offsetTopFrame;
+                snapshotBottom.frame = offsetBottomFrame;
+            }];
             
         } completion:^(BOOL finished){
             
@@ -97,21 +103,35 @@
         [container addSubview:snapshotTop];
         [container addSubview:snapshotBottom];
         
-        [UIView animateWithDuration:self.duration animations:^{
+//        [UIView animateWithDuration:self.duration animations:^{
+         [UIView animateKeyframesWithDuration:self.duration delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
             
-            //set the frames to animate them back into place
-            snapshotTop.frame = topFrame;
-            snapshotBottom.frame = bottomFrame;
+            [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:self.duration animations:^{
+                //set the frames to animate them back into place
+                snapshotTop.frame = topFrame;
+                snapshotBottom.frame = bottomFrame;
+            }];
             
         } completion:^(BOOL finished){
-            
+            NSLog(@"testestestestest");
             //don't forget to clean up
             [snapshotTop removeFromSuperview];
             [snapshotBottom removeFromSuperview];
             [fromController.view removeFromSuperview];
+//            fromController.view.hidden = YES;
             [container addSubview:toController.view];
             
-            [transitionContext completeTransition:finished];
+            // in case gesture transition is cancelled
+            // replace this :
+            // [transitionContext completeTransition:finished];
+            // by this :
+            if(transitionContext.transitionWasCancelled)
+            {
+                [toController.view removeFromSuperview];
+                [container addSubview:fromController.view];
+            }
+            
+            [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
         }];
     }
 }

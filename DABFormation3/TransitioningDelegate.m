@@ -22,8 +22,19 @@
     if([fromVC isMemberOfClass:[ViewController class]] && [toVC isMemberOfClass:[FirstViewController class]]){
         return [[VerticalDoorOpenAnimator alloc] initAnimatorWithType:@"present" andDuration:0.45];
     } else if([toVC isMemberOfClass:[ViewController class]] && [fromVC isMemberOfClass:[FirstViewController class]]){
+        self.transition = ((FirstViewController *)fromVC).transition;
         return [[VerticalDoorOpenAnimator alloc] initAnimatorWithType:@"dismiss" andDuration:0.45];
     }
+    return nil;
+}
+
+- (id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController {
+    if([animationController isKindOfClass:[VerticalDoorOpenAnimator class]])
+        NSLog(@"%@", [[navigationController viewControllers] lastObject]);
+        NSLog(@"%@", self.transition);
+        if([[[navigationController viewControllers] lastObject] isMemberOfClass:[ViewController class]]){
+            return self.transition;//((FirstViewController *)[[navigationController viewControllers] lastObject]).transition;
+        }
     return nil;
 }
 
