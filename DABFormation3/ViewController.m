@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "TransitioningDelegate.h"
 
 @interface ViewController ()
+
+@property TransitioningDelegate *transitioningDelegate;
 
 @end
 
@@ -16,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.transitioningDelegate = [[TransitioningDelegate alloc] init];
+    self.navigationController.delegate = self.transitioningDelegate;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -23,5 +28,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)firstVCUnwindAction:(UIStoryboardSegue*)unwindSegue {
+    NSLog(@"unwind segue from first VC");
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+}
+
+
 
 @end

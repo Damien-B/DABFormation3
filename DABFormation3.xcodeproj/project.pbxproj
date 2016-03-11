@@ -13,6 +13,11 @@
 		A757E0281C8ED1BB0007DEBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A757E0261C8ED1BA0007DEBA /* Main.storyboard */; };
 		A757E02A1C8ED1BB0007DEBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A757E0291C8ED1BB0007DEBA /* Assets.xcassets */; };
 		A757E02D1C8ED1BB0007DEBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A757E02B1C8ED1BB0007DEBA /* LaunchScreen.storyboard */; };
+		A757E0361C8ED2EC0007DEBA /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A757E0351C8ED2EC0007DEBA /* FirstViewController.m */; };
+		A757E0391C8ED2F40007DEBA /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A757E0381C8ED2F40007DEBA /* SecondViewController.m */; };
+		A757E03C1C8ED2FB0007DEBA /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A757E03B1C8ED2FB0007DEBA /* ThirdViewController.m */; };
+		A78B4BD71C91B71600DBB24C /* VerticalDoorOpenAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = A78B4BD61C91B71600DBB24C /* VerticalDoorOpenAnimator.m */; };
+		A78B4BDD1C91C13B00DBB24C /* TransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A78B4BDC1C91C13B00DBB24C /* TransitioningDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,16 @@
 		A757E0291C8ED1BB0007DEBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A757E02C1C8ED1BB0007DEBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A757E02E1C8ED1BB0007DEBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A757E0341C8ED2EC0007DEBA /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		A757E0351C8ED2EC0007DEBA /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		A757E0371C8ED2F40007DEBA /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		A757E0381C8ED2F40007DEBA /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		A757E03A1C8ED2FB0007DEBA /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		A757E03B1C8ED2FB0007DEBA /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		A78B4BD51C91B71600DBB24C /* VerticalDoorOpenAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalDoorOpenAnimator.h; sourceTree = "<group>"; };
+		A78B4BD61C91B71600DBB24C /* VerticalDoorOpenAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalDoorOpenAnimator.m; sourceTree = "<group>"; };
+		A78B4BDB1C91C13B00DBB24C /* TransitioningDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitioningDelegate.h; sourceTree = "<group>"; };
+		A78B4BDC1C91C13B00DBB24C /* TransitioningDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitioningDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +75,15 @@
 			children = (
 				A757E0201C8ED1BA0007DEBA /* AppDelegate.h */,
 				A757E0211C8ED1BA0007DEBA /* AppDelegate.m */,
+				A78B4BDE1C91C22700DBB24C /* custom segues */,
 				A757E0231C8ED1BA0007DEBA /* ViewController.h */,
 				A757E0241C8ED1BA0007DEBA /* ViewController.m */,
+				A757E0341C8ED2EC0007DEBA /* FirstViewController.h */,
+				A757E0351C8ED2EC0007DEBA /* FirstViewController.m */,
+				A757E0371C8ED2F40007DEBA /* SecondViewController.h */,
+				A757E0381C8ED2F40007DEBA /* SecondViewController.m */,
+				A757E03A1C8ED2FB0007DEBA /* ThirdViewController.h */,
+				A757E03B1C8ED2FB0007DEBA /* ThirdViewController.m */,
 				A757E0261C8ED1BA0007DEBA /* Main.storyboard */,
 				A757E0291C8ED1BB0007DEBA /* Assets.xcassets */,
 				A757E02B1C8ED1BB0007DEBA /* LaunchScreen.storyboard */,
@@ -77,6 +99,17 @@
 				A757E01E1C8ED1BA0007DEBA /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A78B4BDE1C91C22700DBB24C /* custom segues */ = {
+			isa = PBXGroup;
+			children = (
+				A78B4BDB1C91C13B00DBB24C /* TransitioningDelegate.h */,
+				A78B4BDC1C91C13B00DBB24C /* TransitioningDelegate.m */,
+				A78B4BD51C91B71600DBB24C /* VerticalDoorOpenAnimator.h */,
+				A78B4BD61C91B71600DBB24C /* VerticalDoorOpenAnimator.m */,
+			);
+			name = "custom segues";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,9 +182,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A78B4BD71C91B71600DBB24C /* VerticalDoorOpenAnimator.m in Sources */,
+				A757E0391C8ED2F40007DEBA /* SecondViewController.m in Sources */,
 				A757E0251C8ED1BA0007DEBA /* ViewController.m in Sources */,
+				A757E03C1C8ED2FB0007DEBA /* ThirdViewController.m in Sources */,
 				A757E0221C8ED1BA0007DEBA /* AppDelegate.m in Sources */,
+				A78B4BDD1C91C13B00DBB24C /* TransitioningDelegate.m in Sources */,
 				A757E01F1C8ED1BA0007DEBA /* main.m in Sources */,
+				A757E0361C8ED2EC0007DEBA /* FirstViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +338,7 @@
 				A757E0331C8ED1BB0007DEBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
