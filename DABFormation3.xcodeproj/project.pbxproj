@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A72A4C571C99CEEC00736E39 /* CustomCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A72A4C561C99CEEC00736E39 /* CustomCollectionViewLayout.m */; };
 		A757E01F1C8ED1BA0007DEBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A757E01E1C8ED1BA0007DEBA /* main.m */; };
 		A757E0221C8ED1BA0007DEBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A757E0211C8ED1BA0007DEBA /* AppDelegate.m */; };
 		A757E0251C8ED1BA0007DEBA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A757E0241C8ED1BA0007DEBA /* ViewController.m */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A72A4C551C99CEEC00736E39 /* CustomCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewLayout.h; sourceTree = "<group>"; };
+		A72A4C561C99CEEC00736E39 /* CustomCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewLayout.m; sourceTree = "<group>"; };
 		A757E01A1C8ED1BA0007DEBA /* DABFormation3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DABFormation3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A757E01E1C8ED1BA0007DEBA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A757E0201C8ED1BA0007DEBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -85,6 +88,8 @@
 				A757E03A1C8ED2FB0007DEBA /* ThirdViewController.h */,
 				A757E03B1C8ED2FB0007DEBA /* ThirdViewController.m */,
 				A757E0261C8ED1BA0007DEBA /* Main.storyboard */,
+				A72A4C551C99CEEC00736E39 /* CustomCollectionViewLayout.h */,
+				A72A4C561C99CEEC00736E39 /* CustomCollectionViewLayout.m */,
 				A757E0291C8ED1BB0007DEBA /* Assets.xcassets */,
 				A757E02B1C8ED1BB0007DEBA /* LaunchScreen.storyboard */,
 				A757E02E1C8ED1BB0007DEBA /* Info.plist */,
@@ -185,6 +190,7 @@
 				A78B4BD71C91B71600DBB24C /* VerticalDoorOpenAnimator.m in Sources */,
 				A757E0391C8ED2F40007DEBA /* SecondViewController.m in Sources */,
 				A757E0251C8ED1BA0007DEBA /* ViewController.m in Sources */,
+				A72A4C571C99CEEC00736E39 /* CustomCollectionViewLayout.m in Sources */,
 				A757E03C1C8ED2FB0007DEBA /* ThirdViewController.m in Sources */,
 				A757E0221C8ED1BA0007DEBA /* AppDelegate.m in Sources */,
 				A78B4BDD1C91C13B00DBB24C /* TransitioningDelegate.m in Sources */,

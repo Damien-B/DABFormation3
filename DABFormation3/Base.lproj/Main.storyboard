@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bJx-cs-kGH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bJx-cs-kGH">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -139,16 +139,10 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="y3f-lj-vEy">
                                 <rect key="frame" x="0.0" y="295" width="600" height="305"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xnx-Nk-2ab">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="20" minY="10" maxX="20" maxY="10"/>
-                                </collectionViewFlowLayout>
+                                <collectionViewLayout key="collectionViewLayout" id="H80-gK-kwR" customClass="CustomCollectionViewLayout"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell" id="yBu-LJ-cXr">
-                                        <rect key="frame" x="20" y="10" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -167,7 +161,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XW5-SO-bHj">
                                         <rect key="frame" x="20" y="40" width="560" height="183"/>
-                                        <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet fringilla dui, non convallis odio rhoncus vitae. Fusce eget viverra tellus. Praesent hendrerit molestie tempus. Pellentesque urna leo, sagittis id varius vel, ornare nec est. Suspendisse potenti. Aliquam interdum posuere nibh, a tincidunt purus faucibus vitae. Sed pretium, arcu efficitur porta consectetur, velit libero elementum quam, non dignissim diam odio eget orci. In porta, massa in tincidunt semper, lectus elit molestie nisi, in viverra erat elit eu tortor. Cras tristique libero sapien, eu euismod leo porta ac.</mutableString>
+                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet fringilla dui, non convallis odio rhoncus vitae. Fusce eget viverra tellus. Praesent hendrerit molestie tempus. Pellentesque urna leo, sagittis id varius vel, ornare nec est. Suspendisse potenti. Aliquam interdum posuere nibh, a tincidunt purus faucibus vitae. Sed pretium, arcu efficitur porta consectetur, velit libero elementum quam, non dignissim diam odio eget orci. In porta, massa in tincidunt semper, lectus elit molestie nisi, in viverra erat elit eu tortor. Cras tristique libero sapien, eu euismod leo porta ac.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -209,20 +203,20 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="iRn-NX-419"/>
-                                <exclude reference="I6b-Ic-88r"/>
                                 <exclude reference="CA3-8x-Tde"/>
                                 <exclude reference="wfa-PQ-23u"/>
+                                <exclude reference="I6b-Ic-88r"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
                                 <exclude reference="d6l-Ao-u7c"/>
                                 <include reference="iRn-NX-419"/>
-                                <include reference="I6b-Ic-88r"/>
                                 <include reference="CA3-8x-Tde"/>
                                 <exclude reference="KW9-kW-lqZ"/>
                                 <exclude reference="rMA-tS-ciB"/>
                                 <include reference="wfa-PQ-23u"/>
+                                <include reference="I6b-Ic-88r"/>
                             </mask>
                         </variation>
                     </view>

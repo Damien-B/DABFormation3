@@ -16,7 +16,7 @@
 //@property (strong, nonatomic) UIPercentDrivenInteractiveTransition *transition;
 @property TransitioningDelegate *transitioningDelegate;
 @property (strong, nonatomic) IBOutlet UIPinchGestureRecognizer *pinchGesture;
-@property (nonatomic, strong) UIPinchGestureRecognizer* pinch;
+@property (nonatomic, strong) UIPinchGestureRecognizer *pinch;
 
 @end
 
