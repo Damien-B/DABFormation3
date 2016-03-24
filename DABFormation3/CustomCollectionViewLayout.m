@@ -22,51 +22,23 @@
 -(void)prepareLayout {
     [super prepareLayout];
 
+    NSInteger margin = 10;
+    NSInteger itemSize = 50;
+    
+    _layoutAttributes = [[NSMutableDictionary alloc] init];
     NSInteger numberOfSections = [self.collectionView numberOfSections];
-
     for(int section = 0;section < numberOfSections;section++) {
         NSUInteger numberOfItems = [self.collectionView numberOfItemsInSection:section];
-        CGFloat fullWidth = numberOfItems * 50 + (numberOfItems+1) * 10;
-        CGFloat fullHeight = 50 + 2*10;
+        CGFloat fullWidth = numberOfItems * itemSize + (numberOfItems+1) * margin;
+        CGFloat fullHeight = itemSize + 2*margin;
         _contentSize = CGSizeMake(fullWidth, fullHeight);
-        
-    
-            for(int item = 0;item < numberOfItems;item++) {
-                NSIndexPath *indexPath = [NSIndexPath indexPathForItem:item inSection:section];
-                UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
-    
-    //            BOOL increaseRow = NO;
-    //            if(self.collectionView.frame.size.width - xOffset > self.maximumItemWidth*1.5f) {
-    //                itemSize = [self randomItemSize];
-    //            }else{
-    //                itemSize.width = self.collectionView.frame.size.width - xOffset - self.horizontalInset;
-    //                itemSize.height = self.itemHeight;
-    //                increaseRow = YES;
-    //            }
-                attributes.frame = CGRectIntegral(CGRectMake(10 + item*(10+50), 10, 50, 50));
-                NSString *key = [self layoutKeyForIndexPath:indexPath];
-                _layoutAttributes[key] = attributes;
-    //
-    //            xOffset += itemSize.width;
-    //            xOffset += self.horizontalInset;
-    //
-    //            if(increaseRow && !(item == numberOfItems-1 && section == numberOfSections-1)) {
-    //                yOffset += self.verticalInset;
-    //                yOffset += self.itemHeight;
-    //                xOffset = self.horizontalInset;
-    //            }
-    //            
-            }
-        
-            }
-    
-    
-    
-//        CGFloat xOffset = self.horizontalInset;
-//
-//    yOffset += self.itemHeight;
-    
-    
+        for(int item = 0;item < numberOfItems;item++) {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForItem:item inSection:section];
+            UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
+            attributes.frame = CGRectIntegral(CGRectMake(margin + item*(margin+itemSize), section*(margin+itemSize) + margin, itemSize, itemSize));
+            NSString *key = [self layoutKeyForIndexPath:indexPath];
+            _layoutAttributes[key] = attributes;        }
+    }
 }
 
 

@@ -36,11 +36,11 @@
 */
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;//(arc4random() % 2 + 1);
+    return (arc4random() % 3 + 1);
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return (arc4random() % 10 + 10);
+    return (arc4random() % 20 + 5);
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
