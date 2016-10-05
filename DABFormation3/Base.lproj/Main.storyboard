@@ -17,10 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="osx" translatesAutoresizingMaskIntoConstraints="NO" id="Ogy-1Y-MxE">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydh-7J-gVw">
                                 <rect key="frame" x="277" y="194" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.66481681029999995" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="mTv-rW-EbD" kind="show" id="Jwp-GD-iin"/>
@@ -28,8 +34,11 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2W-EZ-FIp">
                                 <rect key="frame" x="249" y="274" width="102" height="30"/>
+                                <color key="backgroundColor" red="0.66481681029999995" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
                                 <state key="normal" title="collection view">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="1vZ-0c-ksh" kind="show" id="PsM-KY-8jw"/>
@@ -37,8 +46,11 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZj-ml-P8s">
                                 <rect key="frame" x="184" y="114" width="233" height="30"/>
+                                <color key="backgroundColor" red="0.66481681029999995" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
                                 <state key="normal" title="custom transition &amp; unwind segue">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="fED-XZ-FTm" kind="show" identifier="customPushSegue" id="NV7-by-ti5"/>
@@ -47,12 +59,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.70112419128417969" green="0.83809500932693481" blue="0.93268555402755737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Ogy-1Y-MxE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ckp-Rh-Hrw"/>
                             <constraint firstItem="WZj-ml-P8s" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="LUg-PJ-PXX"/>
                             <constraint firstItem="Ydh-7J-gVw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U84-bi-7C5"/>
                             <constraint firstItem="q2W-EZ-FIp" firstAttribute="top" secondItem="Ydh-7J-gVw" secondAttribute="bottom" constant="50" id="UdT-k3-fJl"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ogy-1Y-MxE" secondAttribute="bottom" id="gkY-xg-OnP"/>
+                            <constraint firstAttribute="trailing" secondItem="Ogy-1Y-MxE" secondAttribute="trailing" id="hbP-Cg-Svf"/>
                             <constraint firstItem="WZj-ml-P8s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n9f-88-toW"/>
                             <constraint firstItem="Ydh-7J-gVw" firstAttribute="top" secondItem="WZj-ml-P8s" secondAttribute="bottom" constant="50" id="nid-iy-k2p"/>
                             <constraint firstItem="q2W-EZ-FIp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oFF-dM-sK1"/>
+                            <constraint firstItem="Ogy-1Y-MxE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xYf-yY-fig"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Mse-Bh-2xI"/>
@@ -110,7 +126,7 @@
         <!--Second View Controller-->
         <scene sceneID="dYh-z9-uhj">
             <objects>
-                <viewController id="mTv-rW-EbD" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="mTv-rW-EbD" customClass="SecondViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nCk-QK-Z0m"/>
                         <viewControllerLayoutGuide type="bottom" id="zcP-Pf-fpB"/>
@@ -248,4 +264,7 @@
             <point key="canvasLocation" x="-343" y="424"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="osx" width="800" height="450"/>
+    </resources>
 </document>

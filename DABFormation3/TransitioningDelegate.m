@@ -24,6 +24,8 @@
     } else if([toVC isMemberOfClass:[ViewController class]] && [fromVC isMemberOfClass:[FirstViewController class]]){
         self.transition = ((FirstViewController *)fromVC).transition;
         return [[VerticalDoorOpenAnimator alloc] initAnimatorWithType:@"dismiss" andDuration:0.45];
+    } else {
+        return [[VerticalDoorOpenAnimator alloc] initAnimatorWithType:@"blur" andDuration:2.45];
     }
     return nil;
 }
@@ -33,7 +35,9 @@
         NSLog(@"%@", [[navigationController viewControllers] lastObject]);
         NSLog(@"%@", self.transition);
         if([[[navigationController viewControllers] lastObject] isMemberOfClass:[ViewController class]]){
-            return self.transition;//((FirstViewController *)[[navigationController viewControllers] lastObject]).transition;
+            NSLog(@"self.transition : %@", self.transition);
+            //this line make click on back button crash ( skype
+            //return self.transition;//((FirstViewController *)[[navigationController viewControllers] lastObject]).transition;
         }
     return nil;
 }

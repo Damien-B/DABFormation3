@@ -76,7 +76,7 @@
             
             [transitionContext completeTransition:finished];
         }];
-    }else{// dismissing transition
+    }else if([self.transitionAnimationType isEqualToString:@"dismiss"]){// dismissing transition
         UIViewController* toController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
         UIViewController* fromController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
         UIView* container = [transitionContext containerView];
@@ -133,6 +133,59 @@
             
             [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
         }];
+    }else if([self.transitionAnimationType isEqualToString:@"blur"]){
+        
+        
+        
+        UIViewController* toController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+        UIViewController* fromController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+        UIView* container = [transitionContext containerView];
+        
+        //get rects that represent the top and bottom halves of the screen
+        CGSize viewSize = fromController.view.bounds.size;
+        CGRect fullFrame = CGRectMake(0, 0, viewSize.width, viewSize.height);
+        
+        //create snapshots
+        UIView* snapshot = [fromController.view snapshotViewAfterScreenUpdates:YES];
+        UIView* snapshotDestination = [toController.view snapshotViewAfterScreenUpdates:YES];
+        
+        //start the frames with an offset
+        snapshot.frame = fullFrame;
+        snapshotDestination.frame = fullFrame;
+        snapshotDestination.layer.opacity = 0.0;
+        [container addSubview:snapshotDestination];
+        
+//        UIVisualEffect *blurEffect;
+//        blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+//        UIVisualEffectView *visualEffectView;
+//        visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+//        visualEffectView.frame = snapshot.bounds;
+//        [snapshotDestination addSubview:visualEffectView];
+
+        
+        
+        [UIView animateKeyframesWithDuration:self.duration delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
+            
+            [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:self.duration/2 animations:^{
+                
+                snapshotDestination.layer.opacity = 1.0;
+            }];
+            [UIView addKeyframeWithRelativeStartTime:self.duration/2 relativeDuration:self.duration/2 animations:^{
+                
+            }];
+            
+        } completion:^(BOOL finished){
+            
+            //don't forget to clean up
+            [snapshot removeFromSuperview];
+            [fromController.view removeFromSuperview];
+            [snapshotDestination removeFromSuperview];
+            [container addSubview:toController.view];
+            
+            [transitionContext completeTransition:finished];
+        }];
+        
+        
     }
 }
 @end
